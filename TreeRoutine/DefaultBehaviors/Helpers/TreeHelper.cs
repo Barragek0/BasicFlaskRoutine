@@ -19,7 +19,9 @@ namespace TreeRoutine.DefaultBehaviors.Helpers
             if (!Core.GameController.Game.IngameState.Data.ServerData.IsInGame)
             {
                 if (Core.Settings.Debug)
-                    Core.LogMessage("Currently not in the game (Charactor selection maybe).", 0.2f);
+                {
+                    Core.LogMessage("Currently not in the game (current game state: "+ Core.GameController.Game.IngameState.Data.ServerData.NetworkState+ ").", 0.2f);
+                }
                 return false;
             }
             else if (Core.GameController.Player == null || Core.GameController.Player.Address == 0 || !Core.GameController.Player.IsValid)
