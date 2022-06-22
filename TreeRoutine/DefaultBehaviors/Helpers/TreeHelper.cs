@@ -16,11 +16,11 @@ namespace TreeRoutine.DefaultBehaviors.Helpers
                     Core.LogMessage("Game is loading...", 0.2f);
                 return false;
             }
-            if (!Core.GameController.Game.IngameState.Data.ServerData.IsInGame)
+            if (!Core.GameController.InGame)
             {
                 if (Core.Settings.Debug)
                 {
-                    Core.LogMessage("Currently not in the game (current game state: "+ Core.GameController.Game.IngameState.Data.ServerData.NetworkState+ ").", 0.2f);
+                    Core.LogMessage("Currently not in the game (current game state: "+ Core.GameController.InGame+ ").", 0.2f);
                 }
                 return false;
             }
